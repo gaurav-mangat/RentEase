@@ -1,15 +1,15 @@
-package Functionality
+package Extras
 
 import (
-	"RentEase/Internals/Landlord"
+	"RentEase/Internals/Authentication"
 	"fmt"
 )
 
-func LandlordDashboard() {
-	for {
+func LandlordSection() {
 
+	for {
 		fmt.Println("\n\n\n----------------------------------------------")
-		fmt.Println("             Landlord Dashboard")
+		fmt.Println("             Landlord Section")
 		fmt.Println("----------------------------------------------")
 		fmt.Println("\nPress 1 to login\nPress 2 to SignUp\nPress 3 to return")
 
@@ -24,9 +24,11 @@ func LandlordDashboard() {
 		// Handle user choice using switch-case
 		switch choice {
 		case 1:
-			Landlord.Login()
+			// Call the Login method here
+			//Login()
 		case 2:
-			Landlord.SignUp()
+			// Call the SignUp method on signupHandler
+			Authentication.SignUp()
 		case 3:
 			fmt.Println("Exiting the application. Goodbye!")
 			return

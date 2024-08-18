@@ -1,0 +1,22 @@
+[
+    {
+        "propertyID": 1,
+        "title": "Shop",
+        "description": "Shop is in Advant",
+        "address": {
+            "state": "Uttar Pradesh",
+            "city": "Noida",
+            "area": "",
+            "street": "Sector 142",
+            "pincode": "244380"
+        },
+        "landlordID": 2,
+        "price": 30000,
+        "availability": "available",
+        "propertyType": "commercial",
+        "amenities": [
+            "free electricity"
+        ],
+        "rentalTerms": "1 month advance"
+    }
+]

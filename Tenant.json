@@ -1,0 +1,13 @@
+[
+    {
+        "username": "darsh",
+        "passwordHash": "$2a$10$zH1gM0NFXMYOMNzrnPa.1OpbBjFg9eke/Ct2m.qH4CAiqIa3HWQXC",
+        "name": "Darshpreet Banga",
+        "age": 25,
+        "email": "darsh@outlook.com",
+        "phone_number": "7896284910",
+        "address": "Madhua Mafi, Amroha, UP",
+        "role": "Tenant",
+        "user_id": 1
+    }
+]
