@@ -48,6 +48,11 @@ func LoadProperties(filePath string) ([]models.Property, error) {
 		return nil, fmt.Errorf("could not unmarshal JSON data: %v", err)
 	}
 
+	// Saving the file name to it
+	utils.Filenames, err = utils.SaveAndUpdateFilenames(Filepath)
+	if err != nil {
+		return nil, fmt.Errorf("could not save filename: %v", err)
+	}
 	return Properties, nil
 }
 
@@ -72,25 +77,34 @@ func addProperties() {
 	// Collect new property details from the user
 	fmt.Println("Enter details for the new property:")
 
+	var propertyType int
+	fmt.Println("Property type :\n1. Commercial\n2.Flats\n3.House")
+	var ch int
+	fmt.Scan(&ch)
+	switch ch {
+	case 1:
+		propertyType = 1
+	case 2:
+		propertyType = 2
+	case 3:
+		propertyType = 3
+	}
 	title := utils.ReadInput("Title: ")
-	description := utils.ReadInput("Description: ")
-	street := utils.ReadInput("Street: ")
+	area := utils.ReadInput("Area: ")
 	city := utils.ReadInput("City: ")
 	state := utils.ReadInput("State: ")
-	pincode := utils.ReadInput("Pincode: ")
+	pincode := utils.ReadPincode()
 	price := utils.ReadFloat("Price: ")
-	availability := utils.ReadInput("Availability: ")
-	propertyType := utils.ReadInput("Property Type: ")
+	availability := 0
 	amenities := utils.ParseCommaSeparatedList(utils.ReadInput("Amenities (comma-separated): "))
 	rentalTerms := utils.ReadInput("Rental Terms: ")
 
 	// Create a new property
 	newProperty := models.Property{
-		PropertyID:  GenerateUniquePropertyID(),
-		Title:       title,
-		Description: description,
+		PropertyID: GenerateUniquePropertyID(),
+		Title:      title,
 		Address: models.Address{
-			Street:  street,
+			Area:    area,
 			City:    city,
 			State:   state,
 			Pincode: pincode,
@@ -181,17 +195,26 @@ func viewProfile() {
 	for i, property := range Properties {
 		fmt.Println("\nProperty Number ", i+1, " :")
 		fmt.Printf("ID: %d\n", property.PropertyID)
+		pT := property.PropertyType
+		switch pT {
+		case 1:
+			fmt.Println("Property Type: Commercial ")
+
+		case 2:
+			fmt.Println("Property Type: Flats ")
+
+		case 3:
+			fmt.Println("Property Type: House ")
+		}
 		fmt.Printf("Title: %s\n", property.Title)
-		fmt.Printf("Description: %s\n", property.Description)
 		fmt.Printf("Address: %s, %s, %s, %s\n",
-			property.Address.Street,
+			property.Address.Area,
 			property.Address.City,
 			property.Address.State,
 			property.Address.Pincode)
 		fmt.Printf("Landlord ID: %d\n", property.LandlordID)
 		fmt.Printf("Price: %.2f\n", property.Price)
-		fmt.Printf("Availability: %s\n", property.Availability)
-		fmt.Printf("Property Type: %s\n", property.PropertyType)
+		fmt.Printf("Availability: %d\n", property.Availability)
 		fmt.Printf("Amenities: %v\n", property.Amenities)
 		fmt.Printf("Rental Terms: %s\n", property.RentalTerms)
 

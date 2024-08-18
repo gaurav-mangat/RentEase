@@ -90,7 +90,7 @@ func Login(userType string) {
 				continue
 			case 2:
 				// Call the SignUp function
-				SignUp(user)
+				SignUp(userType)
 				return // Return to avoid retrying after sign up
 			case 3:
 				// Exit

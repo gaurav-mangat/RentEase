@@ -1,22 +1,40 @@
 [
     {
         "propertyID": 1,
-        "title": "Shop",
-        "description": "Shop is in Advant",
+        "propertyType": 1,
+        "title": "Unfurnished shop with size 50 * 20",
         "address": {
             "state": "Uttar Pradesh",
             "city": "Noida",
-            "area": "",
-            "street": "Sector 142",
-            "pincode": "244380"
+            "street": "Advant Navis Business Park",
+            "pincode": 244380
         },
         "landlordID": 2,
-        "price": 30000,
-        "availability": "available",
-        "propertyType": "commercial",
+        "price": 100000,
+        "availability": 0,
         "amenities": [
-            "free electricity"
+            "Electricity available only"
         ],
-        "rentalTerms": "1 month advance"
+        "rentalTerms": "2 months advance"
+    },
+    {
+        "propertyID": 2,
+        "propertyType": 2,
+        "title": "3 BHK Flat , Fully furnished",
+        "address": {
+            "state": "Uttar Pradesh",
+            "city": "Noida",
+            "street": "Sector 35",
+            "pincode": 244380
+        },
+        "landlordID": 2,
+        "price": 50000,
+        "availability": 0,
+        "amenities": [
+            "Fridge",
+            "Microwave Oven",
+            "AC"
+        ],
+        "rentalTerms": "3 months advance"
     }
 ]

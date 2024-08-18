@@ -3,20 +3,13 @@ package Tenant
 import (
 	"RentEase/models"
 	"fmt"
-	"os"
 )
 
-// LandlordDashboard function to handle user options
-func LandlordDashboard(activeUser models.User) {
-	activeTenant = activeUser
+// TenantDashboard function to handle user options
+func TenantDashboard(activeUser models.User) {
+	//activeTenant = activeUser
 
 	//  Function to load properties once
-
-	_, err := LoadProperties(activeUser.Username + ".json")
-	if err != nil {
-		fmt.Printf("Error loading properties: %v\n", err)
-		os.Exit(1) // Exit if there's an error loading properties
-	}
 
 	for {
 		// User Dashboard
@@ -52,11 +45,11 @@ func LandlordDashboard(activeUser models.User) {
 		case 2:
 			//updateProperty(activeUser)
 		case 3:
-			deleteProperty()
+			//deleteProperty()
 		case 4:
 			// respondToInquiries() // Placeholder function
 		case 5:
-			viewProfile()
+			//viewProfile()
 		case 6:
 			fmt.Println("Logging out...")
 			return

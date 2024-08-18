@@ -20,5 +20,16 @@
         "address": "Behror,Alwar,Rajasthan",
         "role": "Landlord",
         "user_id": 2
+    },
+    {
+        "username": "shivanshu",
+        "passwordHash": "$2a$10$vEOvXjBCuFJdSqwXnd9.T./Oz/OJW63yNQDQ177yISAmOonbS2QnG",
+        "name": "Shivanshu Tyagi",
+        "age": 23,
+        "email": "shivasfs@gsgsa.com",
+        "phone_number": "8943454845",
+        "address": "Chor gali, Behror",
+        "role": "Landlord",
+        "user_id": 3
     }
 ]

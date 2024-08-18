@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"golang.org/x/crypto/bcrypt"
+	"io/ioutil"
 	"os"
 	"regexp"
 	"strconv"
@@ -26,6 +27,11 @@ var Users []models.User
 // Global variable for property storage and ID tracking
 
 var NextPropertyID int
+
+// Global list of all property files
+
+var filename = "Filenames.json"
+var Filenames []string
 
 // IsUsernameUnique checks if the username is unique.
 func IsUsernameUnique(username string) bool {
@@ -157,4 +163,74 @@ func ParseCommaSeparatedList(input string) []string {
 		items[i] = strings.TrimSpace(items[i])
 	}
 	return items
+}
+
+// Reading pincode
+func ReadPincode() int {
+	var pincode int
+
+	for {
+		fmt.Print("Enter a 6-digit pincode: ")
+		_, err := fmt.Scan(&pincode)
+
+		// Check if there's an error in scanning or if the pincode is not 6 digits
+		if err != nil || pincode < 100000 || pincode > 999999 {
+			fmt.Println("Invalid pincode. Please enter a valid 6-digit pincode.")
+			continue
+		}
+
+		// If valid, break the loop
+		break
+	}
+
+	return pincode
+}
+
+// SaveAndUpdateFilenames saves the file path to the Filenames.json file and returns an updated global list of all filenames
+func SaveAndUpdateFilenames(filePath string) ([]string, error) {
+	// Load existing filenames
+	if _, err := os.Stat(filename); os.IsNotExist(err) {
+		// If the Filenames.json file doesn't exist, create it with an empty array
+		err := ioutil.WriteFile(filename, []byte("[]"), 0644)
+		if err != nil {
+			return nil, fmt.Errorf("could not create Filenames.json: %v", err)
+		}
+	}
+
+	// Read the existing filenames
+	data, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return nil, fmt.Errorf("could not read Filenames.json: %v", err)
+	}
+
+	// Unmarshal the JSON data into the Filenames slice
+	err = json.Unmarshal(data, &Filenames)
+	if err != nil {
+		return nil, fmt.Errorf("could not unmarshal JSON data: %v", err)
+	}
+
+	// Check if the filename is already in the list to avoid duplicates
+	for _, name := range Filenames {
+		if name == filePath {
+			// Return the existing list if the file path is already saved
+			return Filenames, nil
+		}
+	}
+
+	// Add the new file path to the list
+	Filenames = append(Filenames, filePath)
+
+	// Marshal the updated list back to JSON
+	updatedData, err := json.Marshal(Filenames)
+	if err != nil {
+		return nil, fmt.Errorf("could not marshal JSON data: %v", err)
+	}
+
+	// Write the updated list back to Filenames.json
+	err = ioutil.WriteFile(filename, updatedData, 0644)
+	if err != nil {
+		return nil, fmt.Errorf("could not write to Filenames.json: %v", err)
+	}
+
+	return Filenames, nil
 }

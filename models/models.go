@@ -33,21 +33,24 @@ type Admin struct {
 type Address struct {
 	State   string `json:"state"`
 	City    string `json:"city"`
-	Area    string `json:"area"`
-	Street  string `json:"street"`
-	Pincode string `json:"pincode"`
+	Area    string `json:"street"`
+	Pincode int    `json:"pincode"`
 }
 
 // Struct for Property
 type Property struct {
 	PropertyID   int      `json:"propertyID"`
-	PropertyType string   `json:"propertyType"`
+	PropertyType int      `json:"propertyType"`
 	Title        string   `json:"title"`
-	Description  string   `json:"description"`
 	Address      Address  `json:"address"`
 	LandlordID   int      `json:"landlordID"`
 	Price        float64  `json:"price"`
-	Availability string   `json:"availability"`
+	Availability int      `json:"availability"`
 	Amenities    []string `json:"amenities"`
 	RentalTerms  string   `json:"rentalTerms"`
+}
+
+// Struct for PropertyFilenames
+type PropertyFilenames struct {
+	Filename string `json:"filename"`
 }
