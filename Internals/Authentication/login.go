@@ -1,6 +1,7 @@
 package Authentication
 
 import (
+	"RentEase/Internals/Admin"
 	"RentEase/Internals/Landlord"
 	"RentEase/Internals/Tenant"
 	"RentEase/utils"
@@ -15,6 +16,8 @@ func Login(userType string) {
 		file = "Landlord.json"
 	} else if userType == "Tenant" {
 		file = "Tenant.json"
+	} else {
+		file = "Admin.json"
 	}
 
 	// Load users from the file once
@@ -57,6 +60,8 @@ func Login(userType string) {
 					Landlord.LandlordDashboard(ActiveUser)
 				} else if userType == "Tenant" {
 					Tenant.TenantDashboard(ActiveUser)
+				} else {
+					Admin.AdminDashboard()
 				}
 				fmt.Println()
 				return // Exit after successful login

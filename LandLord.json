@@ -1,35 +1,38 @@
 [
-    {
-        "username": "gaurav",
-        "passwordHash": "$2a$10$088j.HIbdTyS7RdwNI1K8OujNm9EJOD9zT5duISPIXgE6TWRpRYtu",
-        "name": "Gaurav Singh Mangat",
-        "age": 23,
-        "email": "chaudharymangat5@gmail.com",
-        "phone_number": "7890242424",
-        "address": "Semli, Asmoli, Sambhal, UP West",
-        "role": "Landlord",
-        "user_id": 1
-    },
-    {
-        "username": "prince",
-        "passwordHash": "$2a$10$kvZ6iuv7OUv67EDnjzxIyOhreUeULh2x/xXPWOJpO5zuAAwd.PWzK",
-        "name": "Prince Mangat",
-        "age": 22,
-        "email": "abc@gmail.com",
-        "phone_number": "6734829402",
-        "address": "Behror,Alwar,Rajasthan",
-        "role": "Landlord",
-        "user_id": 2
-    },
-    {
-        "username": "shivanshu",
-        "passwordHash": "$2a$10$vEOvXjBCuFJdSqwXnd9.T./Oz/OJW63yNQDQ177yISAmOonbS2QnG",
-        "name": "Shivanshu Tyagi",
-        "age": 23,
-        "email": "shivasfs@gsgsa.com",
-        "phone_number": "8943454845",
-        "address": "Chor gali, Behror",
-        "role": "Landlord",
-        "user_id": 3
-    }
+  {
+    "username": "gaurav",
+    "passwordHash": "$2a$10$088j.HIbdTyS7RdwNI1K8OujNm9EJOD9zT5duISPIXgE6TWRpRYtu",
+    "name": "Gaurav Singh Mangat",
+    "age": 23,
+    "email": "chaudharymangat5@gmail.com",
+    "phone_number": "7890242424",
+    "address": "Semli, Asmoli, Sambhal, UP West",
+    "role": "Landlord",
+    "user_id": 1,
+    "user_status": 1
+  },
+  {
+    "username": "prince",
+    "passwordHash": "$2a$10$kvZ6iuv7OUv67EDnjzxIyOhreUeULh2x/xXPWOJpO5zuAAwd.PWzK",
+    "name": "Prince Mangat",
+    "age": 22,
+    "email": "abc@gmail.com",
+    "phone_number": "6734829402",
+    "address": "Behror,Alwar,Rajasthan",
+    "role": "Landlord",
+    "user_id": 2,
+    "user_status": 1
+  },
+  {
+    "username": "shivanshu",
+    "passwordHash": "$2a$10$vEOvXjBCuFJdSqwXnd9.T./Oz/OJW63yNQDQ177yISAmOonbS2QnG",
+    "name": "Shivanshu Tyagi",
+    "age": 23,
+    "email": "shivasfs@gsgsa.com",
+    "phone_number": "8943454845",
+    "address": "Chor gali, Behror",
+    "role": "Landlord",
+    "user_id": 3,
+    "user_status": 0
+  }
 ]

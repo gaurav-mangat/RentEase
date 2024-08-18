@@ -12,9 +12,12 @@ import (
 func SignUp(userType string) {
 	// Load users from the file based on the type of user
 	var file string
+	var userStatus int
 	if userType == "Landlord" {
+		userStatus = 0
 		file = "LandLord.json"
 	} else if userType == "Tenant" {
+		userStatus = 1
 		file = "Tenant.json"
 	}
 
@@ -52,6 +55,7 @@ func SignUp(userType string) {
 		Address:      address,
 		Role:         userType,
 		UserID:       userID,
+		UserStatus:   userStatus,
 	}
 
 	// Adding a new user to slice of user

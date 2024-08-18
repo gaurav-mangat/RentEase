@@ -7,7 +7,7 @@ import (
 
 // TenantDashboard function to handle user options
 func TenantDashboard(activeUser models.User) {
-	//activeTenant = activeUser
+	activeTenant := activeUser
 
 	//  Function to load properties once
 
@@ -19,7 +19,9 @@ func TenantDashboard(activeUser models.User) {
 		fmt.Println("\033[1;36m---------------------------------------------\033[0m")      // Sky blue
 		fmt.Println("\n\033[1;34m     1. Search for Property \033[0m")
 		fmt.Println()
-		fmt.Println("\033[1;34m     2. Update the Property Details\033[0m")
+		fmt.Println("\033[1;34m     2. View Wishlist\033[0m")
+		fmt.Println()
+		fmt.Println("\033[1;34m     3. Add Wishlist\033[0m")
 		fmt.Println()
 		fmt.Println("\033[1;34m     3. Delete the Property\033[0m")
 		fmt.Println()
@@ -43,9 +45,12 @@ func TenantDashboard(activeUser models.User) {
 		case 1:
 			searchProperties()
 		case 2:
-			//updateProperty(activeUser)
+			ViewWishlist(activeTenant.Username)
 		case 3:
-			//deleteProperty()
+			var propertyId int
+			fmt.Print("Enter the property Id: ")
+			fmt.Scan(&propertyId)
+			AddToWishlist(propertyId, activeTenant.Username)
 		case 4:
 			// respondToInquiries() // Placeholder function
 		case 5:

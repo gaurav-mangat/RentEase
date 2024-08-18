@@ -8,6 +8,7 @@
         "phone_number": "7896284910",
         "address": "Madhua Mafi, Amroha, UP",
         "role": "Tenant",
-        "user_id": 1
+        "user_id": 1,
+        "user_status": 1
     }
 ]

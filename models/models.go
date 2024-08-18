@@ -11,6 +11,7 @@ type User struct {
 	Address      string `json:"address"`
 	Role         string `json:"role"`
 	UserID       int    `json:"user_id"`
+	UserStatus   int    `json:"user_status"`
 }
 
 // Struct for Landlord by embedding User struct
@@ -54,3 +55,9 @@ type Property struct {
 type PropertyFilenames struct {
 	Filename string `json:"filename"`
 }
+
+type Wishlist struct {
+	Username   string // Assuming you track users by their username
+	Properties []int  // List of PropertyIDs
+}
+type WishlistData map[string][]int // Map username to list of property IDs

@@ -36,5 +36,26 @@
             "AC"
         ],
         "rentalTerms": "3 months advance"
+    },
+    {
+        "propertyID": 3,
+        "propertyType": 2,
+        "title": "3 BHK Flat , Fully furnished",
+        "address": {
+            "state": "Uttar Pradesh",
+            "city": "Noida",
+            "street": "Sector 35",
+            "pincode": 244380
+        },
+        "landlordID": 2,
+        "price": 50000,
+        "availability": 0,
+        "amenities": [
+            "Fridge",
+            "Microwave Oven",
+            "AC"
+        ],
+        "rentalTerms": "3 months advance"
     }
+
 ]

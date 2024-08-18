@@ -70,7 +70,7 @@ func GetAge() int {
 			return age
 		}
 
-		fmt.Println("Invalid age. Please enter a valid age between 19 and 120.")
+		fmt.Println("Invalid age. Please enter a valid age between 1 and 120.")
 	}
 }
 func GetEmail() string {
